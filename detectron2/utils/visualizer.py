@@ -406,7 +406,7 @@ class Visualizer:
 
         if self._instance_mode == ColorMode.SEGMENTATION and self.metadata.get("thing_colors"):
             colors = [
-                self._jitter([x / 255 for x in self.metadata.thing_colors[c]]) for c in classes
+                [x / 255 for x in self.metadata.thing_colors[c]] for c in classes
             ]
             alpha = 0.8
         else:
@@ -525,7 +525,7 @@ class Visualizer:
 
         try:
             colors = [
-                self._jitter([x / 255 for x in self.metadata.thing_colors[c]]) for c in category_ids
+                [x / 255 for x in self.metadata.thing_colors[c]] for c in category_ids
             ]
         except AttributeError:
             colors = None
@@ -568,7 +568,7 @@ class Visualizer:
             category_ids = [x["category_id"] for x in annos]
             if self._instance_mode == ColorMode.SEGMENTATION and self.metadata.get("thing_colors"):
                 colors = [
-                    self._jitter([x / 255 for x in self.metadata.thing_colors[c]])
+                    [x / 255 for x in self.metadata.thing_colors[c]]
                     for c in category_ids
                 ]
             names = self.metadata.get("thing_classes", None)

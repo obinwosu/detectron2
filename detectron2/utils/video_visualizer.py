@@ -49,6 +49,7 @@ class VideoVisualizer:
         assert instance_mode in [
             ColorMode.IMAGE,
             ColorMode.IMAGE_BW,
+            ColorMode.SEGMENTATION,
         ], "Other mode not supported yet."
         self._instance_mode = instance_mode
         self._max_num_instances = self.metadata.get("max_num_instances", 74)

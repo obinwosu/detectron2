@@ -409,7 +409,7 @@ class Visualizer:
                 [x / 255 for x in self.metadata.thing_colors[c]] for c in classes
             ]
             alpha = 0
-        else:
+        else: 
             colors = None
             alpha = 0.5
 
@@ -579,7 +579,7 @@ class Visualizer:
                 is_crowd=[x.get("iscrowd", 0) for x in annos],
             )
             self.overlay_instances(
-                labels=labels, boxes=boxes, masks=masks, keypoints=keypts, assigned_colors=colors
+                labels=labels, masks=masks, keypoints=keypts, assigned_colors=colors
             )
 
         sem_seg = dic.get("sem_seg", None)
@@ -612,7 +612,7 @@ class Visualizer:
         masks=None,
         keypoints=None,
         assigned_colors=None,
-        alpha=0.5,
+        alpha=0,
     ):
         """
         Args:

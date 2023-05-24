@@ -139,7 +139,7 @@ class VideoVisualizer:
             else [y[0] for y in filter(lambda x: x[1], zip(colors, visibilities))]
         )  # noqa
         frame_visualizer.overlay_instances(
-            boxes=None if masks is not None else boxes[visibilities],  # boxes are a bit distracting
+            #boxes=None if masks is not None else boxes[visibilities],  # boxes are a bit distracting
             masks=None if masks is None else masks[visibilities],
             labels=labels,
             keypoints=None if keypoints is None else keypoints[visibilities],

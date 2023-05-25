@@ -116,7 +116,7 @@ class VideoVisualizer:
             alpha = 0
         else: 
             colors = None
-            alpha = 0.5
+            alpha = 0
         
         if self._instance_mode == ColorMode.IMAGE_BW:
             # any() returns uint8 tensor
@@ -125,9 +125,9 @@ class VideoVisualizer:
                     (masks.any(dim=0) > 0).numpy() if masks is not None else None
                 )
             )
-            alpha = 0.3
+            alpha = 0
         else:
-            alpha = 0.5
+            alpha = 0
 
         labels = (
             None

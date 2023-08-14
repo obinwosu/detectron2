@@ -107,7 +107,8 @@ class VideoVisualizer:
                 ]
                 colors = self._assign_colors(detected)
 
-        labels = _create_text_labels(classes, scores, self.metadata.get("thing_classes", None))
+        #labels = _create_text_labels(classes, scores, self.metadata.get("thing_classes", None))
+        labels = _create_text_labels(classes, self.metadata.get("thing_classes", None)) #I removed scores here because I don't want to describe them in the paper
         
         if self._instance_mode == ColorMode.SEGMENTATION and self.metadata.get("thing_colors"):
             colors = [

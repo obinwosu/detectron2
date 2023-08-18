@@ -245,7 +245,6 @@ def _create_text_labels(classes, scores, class_names, is_crowd=None):
             labels = [class_names[i] for i in classes]
         else:
             labels = [str(i) for i in classes]
-    removing scores        
     if scores is not None:
         if labels is None:
             labels = ["{:.0f}%".format(s * 100) for s in scores]
